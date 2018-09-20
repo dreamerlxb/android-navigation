@@ -1,13 +1,11 @@
 package com.lxb.testapp.dummy
 
-import java.util.ArrayList
-import java.util.HashMap
+import java.util.*
 
 /**
  * Helper class for providing sample content for user interfaces created by
  * Android template wizards.
  *
- * TODO: Replace all uses of this class before publishing your app.
  */
 object DummyContent {
 
@@ -35,7 +33,7 @@ object DummyContent {
     }
 
     private fun createDummyItem(position: Int): DummyItem {
-        return DummyItem(position.toString(), "Item $position", makeDetails(position))
+        return DummyItem(position.toString(), "Item $position", makeDetails(position), Date())
     }
 
     private fun makeDetails(position: Int): String {
@@ -50,7 +48,7 @@ object DummyContent {
     /**
      * A dummy item representing a piece of content.
      */
-    data class DummyItem(val id: String, val content: String, val details: String) {
+    data class DummyItem(val id: String, val content: String, val details: String, val time: Date) {
         override fun toString(): String = content
     }
 }
