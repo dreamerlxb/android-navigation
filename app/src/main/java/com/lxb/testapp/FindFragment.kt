@@ -3,7 +3,6 @@ package com.lxb.testapp
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -31,7 +30,12 @@ class FindFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_item_list, container, false)
+
+        return inflater.inflate(R.layout.fragment_item_list, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         // Set the adapter
         if (view is RecyclerView) {
@@ -41,7 +45,6 @@ class FindFragment : Fragment() {
                 adapter = MyItemRecyclerViewAdapter(DummyContent.ITEMS, listener)
             }
         }
-        return view
     }
 
     override fun onAttach(context: Context) {
