@@ -3,6 +3,7 @@ package com.lxb.testapp
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ class MsgFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Msg", "onCreate")
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -29,6 +31,7 @@ class MsgFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.i("Msg", "onCreateView")
         return inflater.inflate(R.layout.fragment_msg, container, false)
     }
 
@@ -38,6 +41,7 @@ class MsgFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.i("Msg", "onAttach")
         if (context is OnFragmentInteractionListener) {
             listener = context
         }

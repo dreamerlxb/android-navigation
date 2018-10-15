@@ -3,6 +3,7 @@ package com.lxb.testapp
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ class MineFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Mine", "onCreate")
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -27,6 +29,7 @@ class MineFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        Log.i("Mine", "onCreateView")
         return inflater.inflate(R.layout.fragment_mine, container, false)
     }
 
@@ -36,6 +39,7 @@ class MineFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.i("Mine", "onAttach")
         if (context is OnFragmentInteractionListener) {
             listener = context
         }
